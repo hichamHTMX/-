@@ -424,11 +424,8 @@ centered = false
 
 [node name="texbox" type="CanvasLayer" parent="."]
 script = ExtResource("23_mslpb")
-text1 = "We spent a long time looking for this guy named Cain"
-text2 = "We went everywhere and found nothing"
-text3 = "This is the last place"
-text4 = "Why do we even need it?"
-text5 = "He can help us get out of this prison"
+text1 = "laomer is a big nob"
+text2 = "hhhhhhhhh"
 png1 = ExtResource("24_dcv7t")
 
 [node name="TextboxContainer" type="MarginContainer" parent="texbox"]
