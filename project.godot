@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="gamejamOWLY"
-run/main_scene="res://Scenes/real/game.tscn"
+run/main_scene="res://Scenes/begin.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
 [autoload]
