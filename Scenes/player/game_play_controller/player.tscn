@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfmfods386tux"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_8ghjp"]
+[ext_resource type="Texture2D" uid="uid://b4aq1536fcpcf" path="res://sprites/Sprite-0006.png" id="2_7dudj"]
+
+[sub_resource type="Curve" id="Curve_6gqqr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wia3u"]
+size = Vector2(40, 40)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_8ghjp")
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+position = Vector2(-2, 24)
+amount = 6
+lifetime = 0.3
+speed_scale = 0.65
+explosiveness = 0.2
+randomness = 0.7
+direction = Vector2(1.12, 0)
+gravity = Vector2(0, 400)
+orbit_velocity_min = -2.0
+orbit_velocity_max = 2.0
+linear_accel_min = 2.8
+linear_accel_max = 2.8
+angle_min = 51.0
+angle_max = 354.0
+scale_amount_min = 6.85
+scale_amount_max = 7.05
+scale_amount_curve = SubResource("Curve_6gqqr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wia3u")
+
+[node name="camera" type="Camera2D" parent="."]
+position_smoothing_speed = 3.0
+
+[node name="Sprite-0008" type="Sprite2D" parent="."]
+position = Vector2(-1, 22)
+rotation = 0.200713
+scale = Vector2(1.6875, 1.6875)
+texture = ExtResource("2_7dudj")
+region_enabled = true
+region_rect = Rect2(24, 27, 8, 5)
+
+[node name="Sprite-0006" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(1.6875, 1.6875)
+texture = ExtResource("2_7dudj")
+region_enabled = true
+region_rect = Rect2(0, 0, 24, 24)
+
+[node name="Sprite-0007" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+rotation = 1.5708
+scale = Vector2(1.6875, 1.6875)
+texture = ExtResource("2_7dudj")
+region_enabled = true
+region_rect = Rect2(0, 24, 8, 8)
