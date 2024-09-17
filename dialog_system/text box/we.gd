@@ -7,6 +7,16 @@ extends Area2D
 @export var gro = "pp"
 var on = true
 
+
+
+
+
+
+
+
+
+
+
 func _on_body_entered(body: Node2D):
 	if body.is_in_group(gro):
 		# تأكد من أن الدالة te موجودة في الأب
