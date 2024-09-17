@@ -96,11 +96,6 @@ _data = {
 
 [node name="texbox" type="CanvasLayer"]
 script = ExtResource("1_ahgsb")
-text1 = "We spent a long time looking for this guy named Cain"
-text2 = "We went everywhere and found nothing"
-text3 = "This is the last place"
-text4 = "Why do we even need it?"
-text5 = "He can help us get out of this prison"
 png1 = ExtResource("2_twl4e")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]

@@ -12,8 +12,8 @@ func _process(delta: float) -> void:
 	pass
 
 func z():
-	add_theme_constant_override("margin_left", 250)
+	add_theme_constant_override("margin_left", 350)
 
 func u():
-	add_theme_constant_override("margin_left", 80)
+	add_theme_constant_override("margin_left", 250)
 	pass

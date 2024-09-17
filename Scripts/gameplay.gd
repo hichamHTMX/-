@@ -3,8 +3,12 @@ extends CharacterBody2D
 
 
 
+class_name PlayerRPG
 
 
+
+
+var rotat_spd : float = 4.0
 @onready var animations: AnimationPlayer = $PlayerAnim
 var speed : float = 200
 var anim : float = 0
@@ -19,6 +23,8 @@ var play = true
 func _physics_process(delta):
 	updateAnimation()
 	movement()
+	animations.stop()
+	BoxMove()
 
 var direction = "Down"
 
@@ -57,3 +63,10 @@ func movement():
 		velocity.x = 0
 		velocity.y = 0
 	move_and_slide()
+
+
+func BoxMove():
+	var diraction = Input.get_axis("ui_left", "ui_right")
+	if diraction:
+		$wiz.rotation = lerp($wiz.rotation, $wiz.rotation + rotat_spd * diraction, 0.018)
+	pass
