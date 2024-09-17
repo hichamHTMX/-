@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://orrl03sbh38u"]
+[gd_scene load_steps=38 format=3 uid="uid://orrl03sbh38u"]
 
 [ext_resource type="Texture2D" uid="uid://dr1xguh5qs1r7" path="res://sprites/Sprite-0005.png" id="1_18g04"]
 [ext_resource type="Script" path="res://Scripts/gameplay.gd" id="2_kt83c"]
@@ -14,9 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://b1aigxxk1k7k1" path="res://font/Sp2.png" id="10_mx3yx"]
 [ext_resource type="FontFile" uid="uid://imqfns5sxsdq" path="res://dialog_system/text box/TerminusTTF-Bold.ttf" id="11_awcka"]
 [ext_resource type="PackedScene" uid="uid://sxvx7qv1bx5b" path="res://dialog_system/text box/we234.tscn" id="12_e6svh"]
+[ext_resource type="Script" path="res://Scripts/select.gd" id="12_o6kd6"]
 [ext_resource type="Script" path="res://dialog_system/text box/صث.gd" id="13_rtx45"]
 [ext_resource type="AudioStream" uid="uid://cilv12cs6felf" path="res://dialog_system/text box/snd_txtnoe_ch1.wav" id="14_0ed3c"]
 [ext_resource type="Script" path="res://dialog_system/text box/global.gd" id="15_o7ti8"]
+[ext_resource type="Texture2D" uid="uid://dxjfp8vm12woo" path="res://sprites/items.png" id="18_g7x47"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qe6vu"]
 texture = ExtResource("1_18g04")
@@ -347,12 +349,14 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/battle menu"]
+[node name="BP" type="TextureProgressBar" parent="CanvasLayer/battle menu"]
+layout_mode = 0
 offset_left = 40.6308
 offset_top = 203.793
 offset_right = 65.6308
 offset_bottom = 399.793
 scale = Vector2(2, 2)
+value = 66.0
 fill_mode = 3
 texture_under = ExtResource("5_3v76n")
 texture_over = ExtResource("6_p4kpm")
@@ -367,7 +371,7 @@ offset_bottom = 336.301
 scale = Vector2(0.175, 0.175)
 theme_override_fonts/font = ExtResource("8_fgs0b")
 theme_override_font_sizes/font_size = 146
-text = "POWER : 0%"
+text = "POWER : 66%"
 
 [node name="Label2" type="Label" parent="CanvasLayer/battle menu"]
 layout_mode = 0
@@ -408,18 +412,47 @@ theme_override_fonts/font = ExtResource("8_fgs0b")
 theme_override_font_sizes/font_size = 146
 text = "1"
 
-[node name="TextureProgressBar2" type="TextureProgressBar" parent="CanvasLayer/battle menu"]
+[node name="HP" type="TextureProgressBar" parent="CanvasLayer/battle menu"]
 layout_mode = 0
 offset_left = 609.106
 offset_top = 57.7952
 offset_right = 641.106
 offset_bottom = 89.7952
 scale = Vector2(2.63, 0.65)
+value = 100.0
 texture_under = ExtResource("9_rahan")
 texture_progress = ExtResource("10_mx3yx")
 
+[node name="Items" type="Sprite2D" parent="CanvasLayer/battle menu"]
+position = Vector2(1194.06, 397.086)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("18_g7x47")
+region_enabled = true
+region_rect = Rect2(0, 0, 31, 114)
+
+[node name="Marker2D" type="Marker2D" parent="CanvasLayer/battle menu/Items"]
+position = Vector2(0.236257, -44.5332)
+
+[node name="Marker2D2" type="Marker2D" parent="CanvasLayer/battle menu/Items"]
+position = Vector2(-0.157013, -13.9556)
+
+[node name="Marker2D3" type="Marker2D" parent="CanvasLayer/battle menu/Items"]
+position = Vector2(-0.26118, 14.1694)
+
+[node name="Marker2D4" type="Marker2D" parent="CanvasLayer/battle menu/Items"]
+position = Vector2(-0.0702922, 43.767)
+
+[node name="Items2" type="Sprite2D" parent="CanvasLayer/battle menu"]
+position = Vector2(1129.21, 292.003)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("18_g7x47")
+region_enabled = true
+region_rect = Rect2(37, 2, 17, 22)
+script = ExtResource("12_o6kd6")
+
 [node name="texbox" type="CanvasLayer" parent="."]
 script = ExtResource("8_we0gs")
+text1 = "fight start !!!"
 
 [node name="TextboxContainer" type="MarginContainer" parent="texbox"]
 anchors_preset = 12
